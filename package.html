@@ -219,9 +219,9 @@
       const destination = document.getElementById('destinationAddress').value.trim();
       const shipDate = document.getElementById('shippingDate').value;
       const weight = parseFloat(document.getElementById('weightKg').value);
-
+      const today = new Date().toISOString().split('T')[0];  
       // Basic validation
-      if (!sender || !destination || !shipDate || isNaN(weight) || weight <= 0) {
+      if (!sender || !destination || !shipDate || isNaN(weight) || weight <= 0 || shipDate < today) {
         alert('Please fill all fields correctly.');
         return;
       }
