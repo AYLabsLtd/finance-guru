@@ -165,7 +165,17 @@
     .triangle-container > section {
       flex: 1;
     }
-
+    /*
+      ---------------------------------------------------------------
+      MEDIA QUERY: If screen width <= 900px, stack the SIP sections
+      vertically (one box below another).
+      ---------------------------------------------------------------
+    */
+    @media (max-width: 900px) {
+      .triangle-container {
+        flex-direction: column;
+      }
+    }
     /* Disclaimer styling (shared) */
     .disclaimer {
       width: 60%;
