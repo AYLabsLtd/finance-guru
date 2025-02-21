@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8"/>
   <title>Shipping Package</title>
+  <style>
     /* Basic reset */
     * {
       box-sizing: border-box;
@@ -214,6 +215,15 @@
       const shipDate = document.getElementById('shippingDate').value;
       const weight = parseFloat(document.getElementById('weightKg').value);
       const today = new Date().toISOString().split('T')[0];  
+
+      console.log(today);
+    // Restrict calendar to only let user pick dates greater than or equal to today.  
+    // document.addEventListener("DOMContentLoaded", function() {
+    //   const shippingDate = document.getElementById('shippingDate');
+    //   const today = new Date().toISOString().split('T')[0]; 
+    //   shippingDate.setAttribute('min', today);
+    //  });
+
       // Basic validation
       if (!sender || !destination || !shipDate || isNaN(weight) || weight <= 0 || shipDate < today) {
         alert('Please fill all fields correctly.');
